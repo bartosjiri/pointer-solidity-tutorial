@@ -1,34 +1,49 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Pointer: Solid Solidity
 
-## Getting Started
+A repository for the [Pointer](https://www.pointer.gg/)'s *"[Solid Solidity](https://www.pointer.gg/tutorials/solid-solidity)"* project.
 
-First, run the development server:
+## Debriefing
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+During the project, the following tasks have been accomplished:
+- Deploy a custom contract ([Etherscan link](https://rinkeby.etherscan.io/address/0x386202d7744234A28A689A4A1E60fD9C472EC4fC))
+- Build and deploy a dedicated website ([Website link](https://pointer-solidity-keyboards.netlify.app/))
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<hr />
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Requirements
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- [Node.js](https://nodejs.org/en/)
+- [Yarn](https://classic.yarnpkg.com/)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Development
 
-## Learn More
+#### Blockchain scripts
 
-To learn more about Next.js, take a look at the following resources:
+1. Install project dependencies:
+	```
+    yarn
+    ```
+2. Copy the `.env.example` file as `.env` and provide values for the first two fields.
+3. Execute the deployment script:
+	```
+    npx hardhat run scripts/deploy.js --network rinkeby
+    ```
+4. Add the contract address to the `.env` file.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### Frontend client
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. Start the application in development mode:
+	```
+    yarn dev
+    ```
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Generate the production build of the application:
+	```
+    yarn build
+    ```
+2. Using the web server of your preference, publish the contents of the generated `build` directory.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Resources
+- [Pointer: Solid Solidity](https://www.pointer.gg/tutorials/solid-solidity)
